@@ -4,6 +4,7 @@
     --color-text: #402B1D;
     --color-olive: #56593C;
     --color-terracotta: #a3542b;
+    --color-terracotta-dark: #8a4322;
     --color-ivory: #FFFDFC;
 }
 
@@ -428,7 +429,7 @@ section[id] {
 
 .menu-item__price {
     flex: none;
-    color: var(--color-terracotta);
+    color: var(--color-terracotta-dark);
     font-size: 1.0625rem;
     font-weight: 750;
     font-variant-numeric: tabular-nums;
@@ -570,7 +571,7 @@ section[id] {
 .contact__group address,
 .contact__group a,
 .hours-list {
-    color: #f2ddd2;
+    color: var(--color-ivory);
 }
 
 .contact__inner {
@@ -587,11 +588,6 @@ section[id] {
 .contact__details {
     display: grid;
     gap: 32px;
-}
-
-.contact__button {
-    justify-self: start;
-    margin-top: 0;
 }
 
 .contact__group h3 {
@@ -800,9 +796,7 @@ section[id] {
     }
 
     .contact__inner {
-        grid-template-areas:
-            "intro details"
-            "button details";
+        grid-template-areas: "intro details";
         grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         align-items: start;
         column-gap: 64px;
@@ -815,11 +809,6 @@ section[id] {
 
     .contact__details {
         grid-area: details;
-    }
-
-    .contact__button {
-        grid-area: button;
-        margin-top: 32px;
     }
 
     .contact__intro h2 {
