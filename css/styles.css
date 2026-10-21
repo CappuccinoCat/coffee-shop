@@ -21,7 +21,7 @@ body {
     margin: 0;
     background: var(--color-background);
     color: var(--color-text);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: system-ui, "Segoe UI", sans-serif;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -130,24 +130,6 @@ section[id] {
     z-index: 10;
     top: 0;
     background: var(--color-background);
-}
-
-@supports (animation-timeline: scroll(root block)) {
-    .site-header {
-        animation: header-scroll-shadow linear both;
-        animation-timeline: scroll(root block);
-        animation-range: 0px 24px;
-    }
-}
-
-@keyframes header-scroll-shadow {
-    from {
-        box-shadow: none;
-    }
-
-    to {
-        box-shadow: 0 6px 18px rgba(41, 34, 29, 0.12);
-    }
 }
 
 .site-header__inner {
@@ -356,30 +338,27 @@ section[id] {
     justify-content: center;
     margin-top: 32px;
     padding: 11px 20px;
-    border: 2px solid var(--color-terracotta);
+    border: 2px solid transparent;
     border-radius: 10px;
     background: var(--color-terracotta);
     color: #ffffff;
     font-weight: 700;
     line-height: 1.3;
     text-decoration: none;
-    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+    transition: background-color 180ms ease, color 180ms ease;
 }
 
 .button--light {
-    border-color: var(--color-ivory);
     background: var(--color-ivory);
     color: var(--color-text);
 }
 
 .button:hover {
-    border-color: var(--color-olive);
     background: var(--color-olive);
     color: #fff;
 }
 
 .button--light:hover {
-    border-color: var(--color-background);
     background: var(--color-background);
     color: var(--color-text);
 }
@@ -466,13 +445,8 @@ section[id] {
         gap: 16px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
         padding-bottom: 8px;
         scrollbar-width: none;
-    }
-
-    .menu-grid::-webkit-scrollbar {
-        display: none;
     }
 
     .menu-item {
