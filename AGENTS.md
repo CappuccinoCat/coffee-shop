@@ -5,7 +5,7 @@
 - Præsentér kaffebarens kaffe, stemning og omgivelser indbydende og professionelt.
 - Hjemmesiden er i dag en enkelt side (`index.html`) opdelt i sektioner med intern ankernavigation: Hjem, Om os, Menu, Galleri og Kontakt. Bevar denne ene side.
 - Behovet for undersider er [SKAL AFKLARES]. Opret ingen ekstra sider, før brugeren har besluttet det.
-- Målgruppe, endelig visuel identitet og konkrete krav til responsiv adfærd er [SKAL AFKLARES]. Den nuværende visuelle retning (varme jordfarver, rolig og hyggelig tone) er etableret i `css/styles.css` og skal følges, ikke ændres.
+- Målgruppe, endelig visuel identitet og konkrete krav til responsiv adfærd er [SKAL AFKLARES]. Den nuværende visuelle retning (varme kaffefarver – espresso, skum, ler, crema og glasur – og en rolig og hyggelig tone) er etableret i `css/styles.css` og skal følges. Ændr den kun, når brugeren udtrykkeligt beder om det.
 
 # Teknologier
 

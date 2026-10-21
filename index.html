@@ -12,6 +12,9 @@
     <meta property="og:description" content="MokkaBar er din lokale kaffebar med omhyggeligt brygget kaffe, rolige omgivelser og plads til at blive lidt længere.">
     <meta property="og:locale" content="da_DK">
     <title>MokkaBar | Kaffe til din pause</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap">
     <link rel="stylesheet" href="css/styles.css">
     <script type="application/ld+json">
     {
@@ -85,10 +88,10 @@
             <nav class="navigation" id="main-navigation" aria-label="Hovednavigation">
                 <ul class="navigation__list">
                     <li><a href="#hjem">Hjem</a></li>
-                    <li><a href="#om-os">Om os</a></li>
+                    <li><a href="#om-os">Om MokkaBar</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#galleri">Galleri</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#kontakt">Find os</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,11 +100,23 @@
     <main id="indhold">
         <!-- Hero -->
         <section class="hero" id="hjem" aria-labelledby="hero-title">
-            <img class="hero__image" src="images/mokkabar-hero.jpg" srcset="images/mokkabar-hero-800.jpg 800w, images/mokkabar-hero-1200.jpg 1200w, images/mokkabar-hero-1600.jpg 1600w, images/mokkabar-hero.jpg 2400w" sizes="100vw" alt="En kop cappuccino på et bord." width="2400" height="1600" fetchpriority="high">
-            <div class="hero__content">
-                <h1 id="hero-title">Kaffe, der får dig lyst til at blive.</h1>
-                <p>MokkaBar er en lokal kaffebar i København N med espresso, cappuccino, café latte og andre klassiske kaffedrikke. Her er plads til dig, der vil have en god kop kaffe og et roligt sted at sidde – alene, med venner eller med computeren.</p>
-                <a class="button" href="#menu">Se vores menu</a>
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <p class="status" data-status>
+                        <span class="status__dot" aria-hidden="true"></span>
+                        <span data-status-text>Kaffestræde 7 · København N</span>
+                    </p>
+                    <h1 id="hero-title">Kaffe, der får dig lyst til at <span class="accent">blive.</span></h1>
+                    <p class="hero__lead">MokkaBar er en lokal kaffebar i København N med espresso, cappuccino, café latte og andre klassiske kaffedrikke. Her er plads til dig, der vil have en god kop kaffe og et roligt sted at sidde – alene, med venner eller med computeren.</p>
+                    <div class="hero__actions">
+                        <a class="button" href="#menu">Se vores menu</a>
+                        <a class="button button--ghost" href="#kontakt">Find os</a>
+                    </div>
+                </div>
+                <div class="hero__media">
+                    <img class="hero__image" src="images/mokkabar-hero.jpg" srcset="images/mokkabar-hero-800.jpg 800w, images/mokkabar-hero-1200.jpg 1200w, images/mokkabar-hero-1600.jpg 1600w, images/mokkabar-hero.jpg 2400w" sizes="(min-width: 1024px) 440px, (min-width: 768px) 40vw, 100vw" alt="En kop cappuccino på et bord." width="2400" height="1600" fetchpriority="high">
+                    <img class="hero__inset-image" src="images/mokkabar-inside-2-600.jpg" alt="" width="600" height="400">
+                </div>
             </div>
         </section>
 
@@ -112,7 +127,8 @@
                     <img src="images/mokkabar-about.jpg" srcset="images/mokkabar-about-600.jpg 600w, images/mokkabar-about-900.jpg 900w, images/mokkabar-about.jpg 1200w" sizes="(min-width: 1264px) 568px, (min-width: 768px) calc(50vw - 64px), calc(100vw - 40px)" alt="Caféhjørne med mennesker siddende ved barbord." width="1200" height="1600" loading="lazy">
                 </div>
                 <div class="about__content">
-                    <h2 id="about-title">Et lille sted med god tid.</h2>
+                    <p class="section-eyebrow">Om os</p>
+                    <h2 id="about-title">Et lille sted med god <span class="accent">tid.</span></h2>
                     <p>MokkaBar er en lokal kaffebar på Kaffestræde i København N. Vi laver klassiske kaffedrikke på espresso, fra en ren espresso til mocha med mørk chokolade. Vores bønner er specialkaffe fra Colombia og Etiopien, ristet i små portioner hos Kaffestrædets Risteri.</p>
                     <p>Tag en ven med, slå computeren op, eller nyd en kop helt for dig selv. Her er der rart at være, uanset hvad dagen bringer.</p>
                 </div>
@@ -120,11 +136,11 @@
         </section>
 
         <!-- Kaffemenu -->
-        <section class="section" id="menu" aria-labelledby="menu-title">
+        <section class="menu section" id="menu" aria-labelledby="menu-title">
             <div class="container">
                 <div class="section-intro">
                     <p class="section-eyebrow">Friskbrygget til din pause.</p>
-                    <h2 id="menu-title">Kaffe til enhver slags smag.</h2>
+                    <h2 id="menu-title">Kaffe til enhver slags <span class="accent">smag.</span></h2>
                 </div>
                 <div class="menu-grid">
                     <article class="menu-item">
@@ -389,9 +405,9 @@
                 <nav aria-label="Navigation i sidefod">
                     <h2 class="site-footer__heading">Udforsk</h2>
                     <ul class="site-footer__links">
-                        <li><a href="#om-os">Om os</a></li>
+                        <li><a href="#om-os">Om MokkaBar</a></li>
                         <li><a href="#menu">Menu</a></li>
-                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#kontakt">Find os</a></li>
                     </ul>
                 </nav>
                 <nav aria-label="Sociale medier">
@@ -404,5 +420,32 @@
             </div>
             <div class="container site-footer__bottom"><span>© 2026 MokkaBar.</span><a href="#hjem">Til toppen</a></div>
         </footer>
+
+    <script>
+        // "Åbent nu" i hero ud fra åbningstiderne i kontaktsektionen (0 = søndag)
+        (function () {
+            var hours = { 0: [9, 0, 16, 0], 1: [7, 30, 18, 0], 2: [7, 30, 18, 0], 3: [7, 30, 18, 0], 4: [7, 30, 18, 0], 5: [7, 30, 18, 0], 6: [8, 30, 17, 0] };
+            var pad = function (n) { return String(n).padStart(2, '0'); };
+            var now = new Date();
+            var day = now.getDay();
+            var mins = now.getHours() * 60 + now.getMinutes();
+            var h = hours[day];
+            var isOpen = mins >= h[0] * 60 + h[1] && mins < h[2] * 60 + h[3];
+            var text;
+
+            if (isOpen) {
+                text = 'Åbent nu · til ' + pad(h[2]) + '.' + pad(h[3]);
+            } else if (mins < h[0] * 60 + h[1]) {
+                text = 'Lukket · åbner kl. ' + pad(h[0]) + '.' + pad(h[1]);
+            } else {
+                var t = hours[(day + 1) % 7];
+                text = 'Lukket · åbner i morgen kl. ' + pad(t[0]) + '.' + pad(t[1]);
+            }
+
+            var status = document.querySelector('[data-status]');
+            status.dataset.open = isOpen;
+            status.querySelector('[data-status-text]').textContent = text;
+        })();
+    </script>
 </body>
 </html>
