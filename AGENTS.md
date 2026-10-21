@@ -9,8 +9,8 @@
 
 # Teknologier
 
-- Hjemmesiden skal bygges udelukkende med HTML og CSS.
-- JavaScript må ikke bruges i projektet. Mobilnavigationen er derfor bygget med en CSS-only checkbox (`navigation-toggle`); bevar dette mønster.
+- Hjemmesiden bygges med HTML og CSS. Simpel vanilla JavaScript må bruges, når det giver mening; hold det enkelt.
+- Mobilnavigationen er bygget med en CSS-only checkbox (`navigation-toggle`); bevar dette mønster.
 - Udviklingsserver, buildproces og deployment er [SKAL AFKLARES].
 - `.idea/` er lokal IDE-metadata (den indeholder bl.a. PHP-indstillinger) og dokumenterer ikke et teknologivalg for hjemmesiden.
 - Introducér ikke frameworks eller tredjepartsbiblioteker, medmindre brugeren senere udtrykkeligt ændrer denne begrænsning.
@@ -66,8 +66,7 @@
 # Begrænsninger
 
 - Hjemmesiden skal indtil videre bestå af den ene side `index.html`.
-- Brug kun HTML og CSS.
-- Brug ikke JavaScript.
+- Brug HTML og CSS samt evt. simpel vanilla JavaScript.
 - Introducér ikke frameworks.
 - Installér eller anvend ikke nye tredjepartsbiblioteker.
 - Implementér ikke backend, database, serverlogik eller API-endpoints.
