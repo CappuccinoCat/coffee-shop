@@ -52,6 +52,12 @@ a:focus-visible {
     border-radius: 2px;
 }
 
+/* Rullebare områder får tabindex via JavaScript, når de kan rulles (se index.html) */
+[tabindex="0"]:focus-visible {
+    outline: 3px solid var(--color-crema-dark);
+    outline-offset: 4px;
+}
+
 h1,
 h2,
 h3,
@@ -89,6 +95,12 @@ h3 {
 
 section[id] {
     scroll-margin-top: 72px;
+}
+
+/* Den sticky header må ikke skjule det element, der får fokus med Tab (WCAG 2.4.11) */
+main :is(a, summary, [tabindex]),
+.site-footer :is(a, [tabindex]) {
+    scroll-margin-top: 96px;
 }
 
 .container {
@@ -133,12 +145,26 @@ section[id] {
     top: 12px;
 }
 
+.skip-link:focus-visible {
+    outline-color: var(--color-crema);
+}
+
+/* Skjult visuelt, men læses af skærmlæsere */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 /* Header */
 .site-header {
     position: sticky;
     z-index: 10;
     top: 0;
-    background: rgba(33, 25, 21, 0.86);
+    background: rgba(33, 25, 21, 0.92);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
@@ -553,6 +579,11 @@ section[id] {
     display: contents;
 }
 
+/* Lange titler må brydes i stedet for at løbe ind under prisen ved forstørret tekst */
+.menu-item__heading h3 {
+    overflow-wrap: anywhere;
+}
+
 .menu-item__heading p {
     grid-column: 1 / -1;
     padding-right: 46px;
@@ -595,12 +626,11 @@ section[id] {
     /* Prisen står ud for titlen som på desktop; titel og pris skalerer ned på smalle skærme */
     .menu-item__heading {
         column-gap: 4px;
-        padding: 14px 10px 10px;
+        padding: 14px 8px 10px;
     }
 
     .menu-item h3 {
         font-size: clamp(0.75rem, 3.75vw, 0.9375rem);
-        white-space: nowrap;
     }
 
     .menu-item__price {
@@ -623,6 +653,10 @@ section[id] {
 
 .guide h2 .accent {
     color: var(--color-crema);
+}
+
+.guide [tabindex="0"]:focus-visible {
+    outline-color: var(--color-crema);
 }
 
 .guide__lead {
@@ -933,6 +967,8 @@ section[id] {
     border-radius: 50%;
     background: var(--color-ler);
     content: "+";
+    /* Tom alternativtekst: ikonet læses ikke op som en del af spørgsmålet */
+    content: "+" / "";
     font-size: 1.25rem;
     font-weight: 400;
     transition: transform 250ms ease, background-color 250ms ease;

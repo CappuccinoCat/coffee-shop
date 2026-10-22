@@ -17,58 +17,256 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap"></noscript>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Struktureret data (JSON-LD): ét @graph med Organization, WebSite, WebPage, Menu og FAQPage. Hold priser, åbningstider,
+         kontaktoplysninger og FAQ i sync med det synlige indhold. Fiktive værdier (study case): geo, telefon og e-mail. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+        "@graph": [
             {
-                "@type": "Question",
-                "name": "Hvad kan jeg få hos MokkaBar?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vi serverer seks klassiske kaffedrikke: espresso, americano, cappuccino, café latte, flat white og mocha."
+                "@type": [
+                    "Organization",
+                    "CafeOrCoffeeShop"
+                ],
+                "@id": "https://cappuccinocat.github.io/coffee-shop/#organization",
+                "name": "MokkaBar",
+                "url": "https://cappuccinocat.github.io/coffee-shop/",
+                "description": "MokkaBar er din lokale kaffebar med omhyggeligt brygget kaffe, rolige omgivelser og plads til at blive lidt længere.",
+                "slogan": "Kaffe, der får dig lyst til at blive.",
+                "image": [
+                    "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-hero.jpg",
+                    "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-inside.jpg",
+                    "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-inside-2.jpg"
+                ],
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Kaffestræde 7",
+                    "postalCode": "2200",
+                    "addressLocality": "København N",
+                    "addressCountry": "DK"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 55.699,
+                    "longitude": 12.549
+                },
+                "telephone": "+4512345678",
+                "email": "hej@mokkabar.example",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "telephone": "+4512345678",
+                    "email": "hej@mokkabar.example",
+                    "availableLanguage": "da"
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "https://schema.org/Monday",
+                            "https://schema.org/Tuesday",
+                            "https://schema.org/Wednesday",
+                            "https://schema.org/Thursday",
+                            "https://schema.org/Friday"
+                        ],
+                        "opens": "07:30",
+                        "closes": "18:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "https://schema.org/Saturday",
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "https://schema.org/Sunday",
+                        "opens": "09:00",
+                        "closes": "16:00"
+                    }
+                ],
+                "priceRange": "32–52 kr.",
+                "servesCuisine": "Kaffe",
+                "hasMenu": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#menu"
                 }
             },
             {
-                "@type": "Question",
-                "name": "Hvad koster en kop kaffe?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Priserne går fra 32 kr. for en espresso til 52 kr. for en mocha."
+                "@type": "WebSite",
+                "@id": "https://cappuccinocat.github.io/coffee-shop/#website",
+                "url": "https://cappuccinocat.github.io/coffee-shop/",
+                "name": "MokkaBar",
+                "description": "MokkaBar er din lokale kaffebar med omhyggeligt brygget kaffe, rolige omgivelser og plads til at blive lidt længere.",
+                "inLanguage": "da-DK",
+                "publisher": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#organization"
                 }
             },
             {
-                "@type": "Question",
-                "name": "Hvad er forskellen på en café latte og en flat white?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Begge laves med dobbelt espresso. En café latte har mere mælk og smager mildere. En flat white har et tyndt lag cremet mælk, så kaffesmagen står tydeligere frem."
+                "@type": "WebPage",
+                "@id": "https://cappuccinocat.github.io/coffee-shop/#webpage",
+                "url": "https://cappuccinocat.github.io/coffee-shop/",
+                "name": "MokkaBar | Kaffe til din pause",
+                "description": "MokkaBar er din lokale kaffebar med omhyggeligt brygget kaffe, rolige omgivelser og plads til at blive lidt længere.",
+                "inLanguage": "da-DK",
+                "isPartOf": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#website"
+                },
+                "about": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#organization"
+                },
+                "primaryImageOfPage": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#primaryimage"
                 }
             },
             {
-                "@type": "Question",
-                "name": "Hvornår har MokkaBar åbent?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Mandag–fredag kl. 07.30–18.00, lørdag kl. 08.30–17.00 og søndag kl. 09.00–16.00."
-                }
+                "@type": "ImageObject",
+                "@id": "https://cappuccinocat.github.io/coffee-shop/#primaryimage",
+                "url": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-hero.jpg",
+                "contentUrl": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-hero.jpg",
+                "caption": "En kop cappuccino på et bord.",
+                "inLanguage": "da-DK"
             },
             {
-                "@type": "Question",
-                "name": "Hvor ligger MokkaBar?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Kaffestræde 7, 2200 København N."
-                }
+                "@type": "Menu",
+                "@id": "https://cappuccinocat.github.io/coffee-shop/#menu",
+                "url": "https://cappuccinocat.github.io/coffee-shop/#menu",
+                "name": "Friskbrygget kaffemenu",
+                "inLanguage": "da-DK",
+                "isPartOf": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#webpage"
+                },
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": "Espresso",
+                        "description": "En intens og rund kop med en blød afslutning.",
+                        "image": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-espresso.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "32",
+                            "priceCurrency": "DKK"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Americano",
+                        "description": "Espresso forlænget med varmt vand. Klar og fyldig.",
+                        "image": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-americano.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "38",
+                            "priceCurrency": "DKK"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Cappuccino",
+                        "description": "Espresso og silkeblødt mælkeskum i balance.",
+                        "image": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-cappuccino.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "44",
+                            "priceCurrency": "DKK"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Café latte",
+                        "description": "En mild favorit med varm mælk og dobbelt espresso.",
+                        "image": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-latte.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "48",
+                            "priceCurrency": "DKK"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Flat white",
+                        "description": "Dobbelt espresso med et tyndt lag cremet mælk.",
+                        "image": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-flat-white.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "46",
+                            "priceCurrency": "DKK"
+                        }
+                    },
+                    {
+                        "@type": "MenuItem",
+                        "name": "Mocha",
+                        "description": "Espresso, mørk chokolade og blød, varm mælk.",
+                        "image": "https://cappuccinocat.github.io/coffee-shop/images/mokkabar-mocha.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "52",
+                            "priceCurrency": "DKK"
+                        }
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "Må jeg sidde og arbejde med min computer?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ja. Du er velkommen til at slå computeren op og blive et stykke tid."
-                }
+                "@type": "FAQPage",
+                "@id": "https://cappuccinocat.github.io/coffee-shop/#faq",
+                "url": "https://cappuccinocat.github.io/coffee-shop/#faq",
+                "name": "Ofte stillede spørgsmål",
+                "inLanguage": "da-DK",
+                "isPartOf": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#webpage"
+                },
+                "about": {
+                    "@id": "https://cappuccinocat.github.io/coffee-shop/#organization"
+                },
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Hvad kan jeg få hos MokkaBar?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Vi serverer seks klassiske kaffedrikke: espresso, americano, cappuccino, café latte, flat white og mocha."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hvad koster en kop kaffe?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Priserne går fra 32 kr. for en espresso til 52 kr. for en mocha."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hvad er forskellen på en café latte og en flat white?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Begge laves med dobbelt espresso. En café latte har mere mælk og smager mildere. En flat white har et tyndt lag cremet mælk, så kaffesmagen står tydeligere frem."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hvornår har MokkaBar åbent?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Mandag–fredag kl. 07.30–18.00, lørdag kl. 08.30–17.00 og søndag kl. 09.00–16.00."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hvor ligger MokkaBar?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Kaffestræde 7, 2200 København N."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Må jeg sidde og arbejde med min computer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Du er velkommen til at slå computeren op og blive et stykke tid."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -198,9 +396,9 @@
                     <h2 id="guide-title">Forskellen på vores <span class="accent">kaffedrikke.</span></h2>
                     <p class="guide__lead">Alle kaffedrikke på menuen starter med espresso. Forskellen ligger i, hvad der kommer oveni: vand, mælk, mælkeskum eller chokolade.</p>
                 </div>
-                <div class="guide__table">
+                <div class="guide__table" role="region" aria-labelledby="guide-table-caption">
                     <table class="comparison-table">
-                        <caption>Kaffedrikkene på MokkaBars menu sammenlignet</caption>
+                        <caption id="guide-table-caption">Kaffedrikkene på MokkaBars menu sammenlignet</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Drik</th>
@@ -301,7 +499,7 @@
                     <h2 id="gallery-title">Et kig <span class="accent">indenfor</span></h2>
                 </div>
                 <div class="gallery__grid">
-                    <img class="gallery__image gallery__image--large" src="images/mokkabar-inside.jpg" srcset="images/mokkabar-inside-900.jpg 900w, images/mokkabar-inside-1400.jpg 1400w, images/mokkabar-inside.jpg 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="MokkaBars caféområde med borde og siddepladser" width="2000" height="1333" loading="lazy">
+                    <img class="gallery__image gallery__image--large" src="images/mokkabar-inside.jpg" srcset="images/mokkabar-inside-900.jpg 900w, images/mokkabar-inside-1400.jpg 1400w, images/mokkabar-inside.jpg 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="Caféens bardisk med barstole, kridttavler med kaffemenu og espressomaskiner" width="2000" height="1333" loading="lazy">
                     <img class="gallery__image" src="images/mokkabar-inside-2.jpg" srcset="images/mokkabar-inside-2-600.jpg 600w, images/mokkabar-inside-2-900.jpg 900w, images/mokkabar-inside-2.jpg 1200w" sizes="(min-width: 768px) 25vw, 50vw" alt="Barista laver et mønster i mælkeskummet på en latte" width="1200" height="800" loading="lazy">
                     <img class="gallery__image" src="images/mokkabar-beans.jpg" srcset="images/mokkabar-beans-600.jpg 600w, images/mokkabar-beans-900.jpg 900w, images/mokkabar-beans.jpg 1200w" sizes="(min-width: 768px) 25vw, 50vw" alt="Kaffebønner" width="1200" height="900" loading="lazy">
                     <img class="gallery__image" src="images/mokkabar-friends.jpg" srcset="images/mokkabar-friends-600.jpg 600w, images/mokkabar-friends-900.jpg 900w, images/mokkabar-friends.jpg 1200w" sizes="(min-width: 768px) 25vw, 50vw" alt="Tre venner med kaffe og en samtale ved cafébordet og en laptop" width="1200" height="801" loading="lazy">
@@ -416,8 +614,8 @@
                 <nav aria-label="Sociale medier">
                     <h2 class="site-footer__heading">Følg med</h2>
                     <ul class="site-footer__links">
-                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (åbner i nyt vindue)</span></a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook<span class="visually-hidden"> (åbner i nyt vindue)</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -453,8 +651,51 @@
             status.querySelector('[data-status-text]').textContent = text;
 
             document.querySelectorAll('.hours-list [data-days]').forEach(function (row) {
-                if (row.dataset.days.split(',').indexOf(String(day)) > -1) row.classList.add('is-today');
+                if (row.dataset.days.split(',').indexOf(String(day)) > -1) {
+                    row.classList.add('is-today');
+
+                    // Markeringen er visuel (farve og prik), så skærmlæsere får den som tekst
+                    var note = document.createElement('span');
+                    note.className = 'visually-hidden';
+                    note.textContent = ' (i dag)';
+                    row.querySelector('dt').appendChild(note);
+                }
             });
+        })();
+
+        // Mobilmenuen (CSS-only checkbox) lukkes, når et link vælges, med Escape og når fokus forlader headeren
+        (function () {
+            var toggle = document.getElementById('navigation-toggle');
+
+            document.getElementById('main-navigation').addEventListener('click', function (event) {
+                if (event.target.closest('a')) toggle.checked = false;
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && toggle.checked) {
+                    toggle.checked = false;
+                    toggle.focus();
+                }
+            });
+
+            document.addEventListener('focusin', function (event) {
+                if (toggle.checked && !event.target.closest('.site-header')) toggle.checked = false;
+            });
+        })();
+
+        // Områder, der kan rulles sidelæns (tabel og swipe-lister på smalle skærme), kan nås med tastaturet
+        (function () {
+            var scrollers = document.querySelectorAll('.guide__table, .glossary__list, .reviews__grid');
+            var update = function () {
+                scrollers.forEach(function (el) {
+                    if (el.scrollWidth > el.clientWidth) el.setAttribute('tabindex', '0');
+                    else el.removeAttribute('tabindex');
+                });
+            };
+
+            update();
+            window.addEventListener('resize', update);
+            window.addEventListener('load', update);
         })();
     </script>
 </body>
