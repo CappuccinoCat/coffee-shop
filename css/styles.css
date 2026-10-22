@@ -1,3 +1,12 @@
+/* Instrument Serif (kursiv, latin) hostes lokalt for at undgå forbindelser til Google Fonts – licens i fonts/OFL.txt */
+@font-face {
+    font-family: "Instrument Serif";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/instrument-serif-italic.woff2") format("woff2");
+}
+
 :root {
     --color-espresso: #211915;
     --color-skum: #F1EBE3;

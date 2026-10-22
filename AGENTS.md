@@ -25,8 +25,11 @@
   ├── index.html
   ├── css/
   │   └── styles.css
+  ├── fonts/
   └── images/
   ```
+
+- `fonts/` indeholder den lokalt hostede Instrument Serif (kursiv, `.woff2`) og dens licens (`OFL.txt`). Fonten indlæses via `@font-face` i `css/styles.css` og preloades i `index.html`; hent ikke fonte fra Google Fonts eller andre eksterne domæner.
 
 - `index.html` er hele hjemmesiden for MokkaBar (sprog: dansk, `lang="da"`).
 - `css/styles.css` indeholder al styling. Farver og andre fælles værdier ligger som CSS-variabler i `:root`; genbrug dem frem for at indføre nye hardcodede værdier.

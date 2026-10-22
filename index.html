@@ -12,10 +12,7 @@
     <meta property="og:description" content="MokkaBar er din lokale kaffebar med omhyggeligt brygget kaffe, rolige omgivelser og plads til at blive lidt længere.">
     <meta property="og:locale" content="da_DK">
     <title>MokkaBar | Kaffe til din pause</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap"></noscript>
+    <link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Struktureret data (JSON-LD): ét @graph med Organization, WebSite, WebPage, Menu og FAQPage. Hold priser, åbningstider,
          kontaktoplysninger og FAQ i sync med det synlige indhold. Fiktive værdier (study case): geo, telefon og e-mail. -->
@@ -693,7 +690,7 @@
                 });
             };
 
-            update();
+            // Måles først ved load, så målingen ikke tvinger en ekstra layout-beregning under første rendering
             window.addEventListener('resize', update);
             window.addEventListener('load', update);
         })();
