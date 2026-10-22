@@ -523,6 +523,12 @@ main :is(a, summary, [tabindex]),
     .about__image {
         order: 1;
     }
+
+    /* Billedets height-attribut (1600) overstyrer aspect-ratio, så billedet blev 540 px højt */
+    .about__image img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
 }
 
 .about__content .section-eyebrow {
@@ -843,6 +849,18 @@ main :is(a, summary, [tabindex]),
     line-height: 1.55;
 }
 
+@media (max-width: 767px) {
+    .reason {
+        padding: 0;
+        text-align: center;
+    }
+
+    .reason__number,
+    .reason p {
+        margin-inline: auto;
+    }
+}
+
 /* Galleri */
 .gallery {
     background: var(--color-espresso);
@@ -944,6 +962,12 @@ main :is(a, summary, [tabindex]),
 
 .faq__head h2 {
     max-width: 10ch;
+}
+
+@media (max-width: 767px) {
+    .faq__head h2 {
+        max-width: none;
+    }
 }
 
 .faq__list {
@@ -1142,6 +1166,13 @@ main :is(a, summary, [tabindex]),
 
 .site-footer__tagline .accent {
     color: var(--color-crema);
+}
+
+/* "at blive." holdes samlet, så "blive." ikke står alene på sidste linje */
+@media (max-width: 767px) {
+    .site-footer__tagline-end {
+        white-space: nowrap;
+    }
 }
 
 .site-footer__heading {
