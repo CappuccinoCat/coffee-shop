@@ -1128,8 +1128,14 @@ section[id] {
     user-select: none;
 }
 
-.site-footer__wordmark span {
+/* Rent dekorativt ordmærke: teksten ligger i CSS, så den ikke tæller som læsetekst i kontrasttjek */
+.site-footer__wordmark::before {
+    content: "MokkaBar";
+}
+
+.site-footer__wordmark::after {
     color: var(--color-crema);
+    content: ".";
 }
 
 .site-footer__bottom {
