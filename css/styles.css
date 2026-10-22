@@ -606,36 +606,42 @@ main :is(a, summary, [tabindex]),
     opacity: 0.82;
 }
 
-/* To kort ved siden af hinanden på mobil */
+/* Listevisning på mobil: billede til venstre, tekst til højre, kortene stablet */
 @media (max-width: 767px) {
     .menu-grid {
-        column-gap: 12px;
-        row-gap: 20px;
+        row-gap: 16px;
     }
 
     .menu-item {
-        flex-basis: calc((100% - 12px) / 2);
+        display: grid;
+        grid-template-columns: 38% minmax(0, 1fr);
         min-width: 0;
+        padding: 0;
         border-radius: 24px;
+        overflow: hidden;
     }
 
+    /* Billedet strækkes til kortets højde; kortet klipper hjørnerne */
     .menu-item img {
-        border-radius: 18px 18px 0 0;
+        height: auto;
+        align-self: stretch;
+        border-radius: 0;
     }
 
     /* Prisen står ud for titlen som på desktop; titel og pris skalerer ned på smalle skærme */
     .menu-item__heading {
-        column-gap: 4px;
-        padding: 14px 8px 10px;
+        align-self: center;
+        column-gap: 8px;
+        padding: 14px 12px 14px 14px;
     }
 
     .menu-item h3 {
-        font-size: clamp(0.75rem, 3.75vw, 0.9375rem);
+        font-size: clamp(0.875rem, 4vw, 1.125rem);
     }
 
     .menu-item__price {
-        padding: 2px clamp(6px, 2vw, 8px);
-        font-size: clamp(0.6875rem, 3.4vw, 0.8125rem);
+        padding: 2px 8px;
+        font-size: clamp(0.8125rem, 3.6vw, 0.9375rem);
         white-space: nowrap;
     }
 
